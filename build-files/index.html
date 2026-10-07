@@ -11,7 +11,7 @@
 <body>
 
 <div class="lz-header">
-  <a href="../index.html"><img src="logo.png" alt="LABZ RC"></a>
+  <a href="../index.html"><img src="../logo.png" alt="LABZ RC"></a>
   <span class="lz-header-title">Build Files</span>
 </div>
 
@@ -36,7 +36,7 @@ var BUILDS = [
     subtitle: "Off-Road Interceptor · Desert Scout Class",
     chassis: 'Kyosho Ultima "Legendary" (1987 re-release)',
     accentColor: "#1e8fa6",
-    thumbnail: "cayote/images/ultima-side.png"
+    thumbnail: "cayote/images/ultima-side.jpg"
   },
   {
     slug: "rc10t7",
@@ -44,7 +44,8 @@ var BUILDS = [
     subtitle: "Stadium Truck · Stock Spec Class",
     chassis: "Associated RC10T7",
     accentColor: "#E31837",
-    thumbnail: null
+    thumbnail: null,
+    status: "in-progress"
   }
 ];
 
@@ -65,6 +66,7 @@ var BUILDS = [
           '<div class="lz-index-card-name">' + esc(b.name) + '</div>' +
           '<div class="lz-index-card-subtitle">' + esc(b.subtitle) + '</div>' +
           '<div class="lz-index-card-chassis">' + esc(b.chassis) + '</div>' +
+          (b.status === 'in-progress' ? '<div class="lz-index-card-status">In the garage</div>' : '') +
         '</div>' +
       '</a>'
     );

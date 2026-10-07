@@ -17,7 +17,7 @@
   function renderHeader() {
     return (
       '<div class="lz-header">' +
-        '<a href="../../index.html"><img src="../logo.png" alt="LABZ RC"></a>' +
+        '<a href="../../index.html"><img src="../../logo.png" alt="LABZ RC"></a>' +
         '<span class="lz-header-title">Build Files</span>' +
         '<span class="lz-header-spacer"></span>' +
         '<a href="../index.html" class="lz-header-back">← All Builds</a>' +
@@ -29,6 +29,7 @@
     return (
       '<div class="lz-page">' +
         renderSubtitle() +
+        renderStatus() +
         '<div class="lz-boxart">' +
           renderFrontPanel() +
           renderBackPanel() +
@@ -38,6 +39,12 @@
         renderFooter() +
       '</div>'
     );
+  }
+
+  // status: "in-progress" marks a build file that's still being written.
+  function renderStatus() {
+    if (B.status !== 'in-progress') return '';
+    return '<div class="lz-status"><strong>In the garage</strong>This build file is still being written. Story, photos, and art are on the way.</div>';
   }
 
   function renderSubtitle() {
@@ -56,7 +63,7 @@
       '<div class="lz-panel">' +
         '<div class="lz-panel-grain"></div>' +
         '<div class="lz-front-banner">' +
-          '<img src="../logo.png" alt="LABZ RC">' +
+          '<img src="../../logo.png" alt="LABZ RC">' +
           '<div class="lz-front-banner-tagline">BUILT TO RACE. BORN TO STORY.</div>' +
         '</div>' +
         '<div class="lz-front-badge-row">' +
@@ -110,7 +117,7 @@
       '<div class="lz-panel">' +
         '<div class="lz-panel-grain"></div>' +
         '<div class="lz-back-header">' +
-          '<img src="../logo.png" alt="LABZ RC">' +
+          '<img src="../../logo.png" alt="LABZ RC">' +
           '<div class="lz-back-header-file">FILE ' + esc(B.fileNumber) + ' — ' + esc(B.name) + '</div>' +
         '</div>' +
         '<div class="lz-back-tech-banner">' +
