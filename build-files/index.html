@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build Files — LABZ RC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,500;0,700;1,600&family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="build-files.css">
+</head>
+<body>
+
+<div class="lz-header">
+  <a href="../index.html"><img src="logo.png" alt="LABZ RC"></a>
+  <span class="lz-header-title">Build Files</span>
+</div>
+
+<div class="lz-page">
+  <div class="lz-page-subtitle">
+    <div class="lz-page-subtitle-label">LABZ RC — Build Files</div>
+    <div class="lz-page-subtitle-detail">Every machine has a story. These are their files.</div>
+  </div>
+
+  <div class="lz-index-grid" id="lz-index"></div>
+
+  <div class="lz-page-footer">
+    &copy; 2026 <a href="https://craz.com">Crabtree Labz</a>
+  </div>
+</div>
+
+<script>
+var BUILDS = [
+  {
+    slug: "cayote",
+    name: "CAYOTE",
+    subtitle: "Off-Road Interceptor · Desert Scout Class",
+    chassis: 'Kyosho Ultima "Legendary" (1987 re-release)',
+    accentColor: "#1e8fa6",
+    thumbnail: "cayote/images/ultima-side.png"
+  },
+  {
+    slug: "rc10t7",
+    name: "RC10T7",
+    subtitle: "Stadium Truck · Stock Spec Class",
+    chassis: "Associated RC10T7",
+    accentColor: "#E31837",
+    thumbnail: null
+  }
+];
+
+(function () {
+  var grid = document.getElementById('lz-index');
+  var html = '';
+  for (var i = 0; i < BUILDS.length; i++) {
+    var b = BUILDS[i];
+    var img = b.thumbnail
+      ? '<img class="lz-index-card-img" src="' + esc(b.thumbnail) + '" alt="' + esc(b.name) + '">'
+      : '<div class="lz-placeholder" style="aspect-ratio:4/3">' + esc(b.name) + '</div>';
+
+    html += (
+      '<a class="lz-index-card" href="' + esc(b.slug) + '/index.html" style="--lz-accent:' + esc(b.accentColor) + '">' +
+        img +
+        '<div class="lz-index-card-accent"></div>' +
+        '<div class="lz-index-card-body">' +
+          '<div class="lz-index-card-name">' + esc(b.name) + '</div>' +
+          '<div class="lz-index-card-subtitle">' + esc(b.subtitle) + '</div>' +
+          '<div class="lz-index-card-chassis">' + esc(b.chassis) + '</div>' +
+        '</div>' +
+      '</a>'
+    );
+  }
+  grid.innerHTML = html;
+
+  function esc(s) {
+    if (!s) return '';
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+})();
+</script>
+</body>
+</html>

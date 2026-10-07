@@ -80,6 +80,26 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
+    .nav-link {
+      display: inline-block;
+      margin-top: 32px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--text);
+      padding: 10px 28px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
   </style>
 </head>
 
@@ -88,6 +108,7 @@
     <div class="container">
       <img src="logo.png" alt="LABZ RC" class="logo">
       <h1 class="slogan">Lab-Built. Story-Driven.</h1>
+      <a href="build-files/index.html" class="nav-link">Build Files →</a>
     </div>
   </div>
   <div class="footer">&copy; 2026 <a href="https://craz.com">Crabtree Labz</a></div>

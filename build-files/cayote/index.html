@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAYOTE — LABZ RC Build File</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,500;0,700;1,600&family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../build-files.css">
+</head>
+<body>
+<div id="lz-root"></div>
+
+<script>
+var BUILD = {
+  name: "CAYOTE",
+  subtitle: "Off-Road Interceptor",
+  classDesignation: "Desert Scout Class",
+  chassis: 'Kyosho Ultima "Legendary" (1987 re-release)',
+  raceClass: "21.5T Vintage Class",
+  fileNumber: "01",
+
+  accentColor: "#1e8fa6",
+
+  functionLabel: "OFF-ROAD INTERCEPTOR",
+  tagline: "Some cars are built to win. I was built to remember.",
+  story: "Built in '87, forgotten in a closet, reawakened for the vintage class. CAYOTE doesn't chase trophies — it chases the feeling of a perfect corner. Under a fresh Cayote 21.5T heart and a Cayote RS80 pulse, this desert-blue prowler remembers loose dirt better than any car should. It runs low, hugs the ground, and comes out of the corner like something that was always meant to run wild.",
+
+  stats: [
+    { label: "Top Speed", value: 7 },
+    { label: "Acceleration", value: 9 },
+    { label: "Handling / Grip", value: 9 },
+    { label: "Durability", value: 6 },
+    { label: "Nostalgia / Style", value: 10 }
+  ],
+
+  specs: [
+    { label: "ESC", value: "Cayote RS80" },
+    { label: "BATTERY", value: "Cayote 3900 LiPo" },
+    { label: "SERVO", value: "ProTek" },
+    { label: "MOTOR", value: "Cayote 21.5T" },
+    { label: "TIRES", value: "JConcepts Silver Smoothies", wide: true }
+  ],
+
+  callouts: [
+    { n: 1, top: "8%",  left: "42%", label: 'Front wing "ears"' },
+    { n: 2, top: "28%", left: "12%", label: "Shock towers — legs" },
+    { n: 3, top: "46%", left: "78%", label: "Chassis — Cayote 21.5T heart" },
+    { n: 4, top: "70%", left: "30%", label: "Desert-camo livery plating" },
+    { n: 5, top: "82%", left: "68%", label: "Wheels — hip/shoulder discs" }
+  ],
+
+  images: {
+    robotMode: null,
+    vehicleMode: "images/ultima-side.png",
+    featureDiagram: "images/ultima-feature.png",
+    gallery: [
+      { src: "images/ultima-side.png", caption: "Desert Blue — side profile" },
+      { src: "images/ultima-front.png", caption: "Front quarter view" }
+    ]
+  },
+
+  videos: [
+    { title: "Cayote — Build Walkthrough", youtubeId: "dQw4w9WgXcQ" }
+  ]
+};
+</script>
+<script src="../build-files.js"></script>
+</body>
+</html>
