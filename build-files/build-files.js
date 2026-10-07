@@ -284,10 +284,7 @@
       var v = videos[i];
       cards += (
         '<div class="lz-video-card">' +
-          '<iframe src="https://www.youtube.com/embed/' + esc(v.youtubeId) + '" ' +
-            'title="' + esc(v.title) + '" ' +
-            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
-            'allowfullscreen loading="lazy"></iframe>' +
+          ytFacade(v.youtubeId, v.title) +
           '<div class="lz-video-card-title">' + esc(v.title) + '</div>' +
         '</div>'
       );
@@ -310,12 +307,35 @@
   function renderFooter() {
     return (
       '<div class="lz-page-footer">' +
-        '© 2026 <a href="https://craz.com">Crabtree Labz</a>' +
+        '© 2026 <a href="https://craz.com">Crabtree Labz</a> · <a href="https://craz.com/privacy.html">Privacy</a>' +
       '</div>'
     );
   }
 
   /* ── Util ──────────────────────────────────────────── */
+
+  /* ── Click-to-load YouTube ────────────────────────────
+     Nothing loads from YouTube until the visitor presses play
+     (our privacy policy promises no third-party requests on page load).
+     ytFacade(id, title) returns the button; one click handler swaps in
+     YouTube's privacy-enhanced player. */
+  function ytFacade(id, title) {
+    return '<button type="button" class="yt-facade" data-youtube="' + esc(id) + '" data-title="' + esc(title || '') + '"' +
+      ' aria-label="Play video' + (title ? ': ' + esc(title) : '') + '">' +
+      '<span class="yt-play" aria-hidden="true">▶</span>' +
+      '<span class="yt-note">Play video · loads from YouTube</span></button>';
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.yt-facade') : null;
+    if (!b) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.getAttribute('data-youtube')) + '?autoplay=1&rel=0';
+    f.title = b.getAttribute('data-title') || 'Video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.className = 'yt-frame';
+    b.parentNode.replaceChild(f, b);
+  });
 
   function esc(s) {
     if (!s) return '';

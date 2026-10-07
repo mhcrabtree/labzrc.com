@@ -853,3 +853,17 @@ a:hover { color: #ffd23f; }
   border: 1px dashed var(--lz-accent);
   padding: 2px 8px;
 }
+
+/* Click-to-load YouTube (see ytFacade in the script) */
+.yt-facade {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; aspect-ratio: 16 / 9; border: 0; margin: 0; padding: 0; cursor: pointer;
+  background: #14161b; color: #e8e4da; font: inherit;
+}
+.yt-facade .yt-play {
+  width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid var(--lz-accent); color: var(--lz-accent); font-size: 22px; padding-left: 4px;
+}
+.yt-facade .yt-note { font-size: 0.85rem; opacity: 0.75; }
+.yt-facade:hover .yt-play, .yt-facade:focus-visible .yt-play { background: var(--lz-accent); color: #14161b; }
+.lz-video-card .yt-frame { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
