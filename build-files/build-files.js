@@ -76,8 +76,7 @@
           '<div class="lz-front-accent-bar"></div>' +
           '<div class="lz-front-class">' + esc(B.subtitle) + ' · ' + esc(B.classDesignation) + '</div>' +
         '</div>' +
-        renderFrontRobot() +
-        renderFrontVehicle() +
+        renderFrontArt() +
         '<div class="lz-front-footer">' +
           '<span>' + esc(B.chassis).toUpperCase() + '</span>' +
           '<span class="lz-front-footer-accent">LABZRC.COM</span>' +
@@ -86,11 +85,23 @@
     );
   }
 
-  function renderFrontRobot() {
-    var img = B.images && B.images.robotMode;
+  // No robot art yet: the vehicle photo fills the front panel, with no mode labels.
+  function renderFrontArt() {
+    var robot = B.images && B.images.robotMode;
+    if (!robot) return renderFrontPhoto();
+    return renderFrontRobot(robot) + renderFrontVehicle();
+  }
+
+  function renderFrontPhoto() {
+    var img = B.images && B.images.vehicleMode;
     var inner = img
-      ? '<img src="' + esc(img) + '" alt="' + esc(B.name) + ' — Robot Mode">'
-      : '<div class="lz-placeholder">Robot Mode Art<br>Coming Soon</div>';
+      ? '<img src="' + esc(img) + '" alt="' + esc(B.name) + '">'
+      : '<div class="lz-placeholder">Photos<br>Coming Soon</div>';
+    return '<div class="lz-front-photo">' + inner + '</div>';
+  }
+
+  function renderFrontRobot(img) {
+    var inner = '<img src="' + esc(img) + '" alt="' + esc(B.name) + ' — Robot Mode">';
     return (
       '<div class="lz-front-robot">' +
         inner +
@@ -152,10 +163,10 @@
     return (
       '<div class="lz-back-diagram">' +
         '<div class="lz-back-diagram-frame">' +
-          '<img src="' + esc(B.images.featureDiagram) + '" alt="Feature diagram">' +
+          '<img src="' + esc(B.images.featureDiagram) + '" alt="' + esc(B.name) + '">' +
           dots +
         '</div>' +
-        '<div class="lz-callout-legend">' + legend + '</div>' +
+        (legend ? '<div class="lz-callout-legend">' + legend + '</div>' : '') +
       '</div>'
     );
   }

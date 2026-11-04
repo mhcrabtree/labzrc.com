@@ -234,6 +234,22 @@ a:hover { color: #ffd23f; }
   padding: 4px 8px;
 }
 
+/* Photo only (no robot art yet) */
+.lz-front-photo {
+  margin: 14px 20px 18px;
+  aspect-ratio: 4/3;
+  background: linear-gradient(160deg, #2a2e36, var(--lz-ink));
+  border: 3px solid var(--lz-ink);
+  overflow: hidden;
+}
+
+.lz-front-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Vehicle mode inset */
 .lz-front-vehicle {
   position: relative;
