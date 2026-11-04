@@ -35,6 +35,8 @@
           renderBackPanel() +
         '</div>' +
         renderGallerySection() +
+        renderPartsSection() +
+        renderNotesSection() +
         renderVideoSection() +
         renderFooter() +
       '</div>'
@@ -222,11 +224,7 @@
 
     return (
       '<div class="lz-section">' +
-        '<div class="lz-section-header">' +
-          '<div class="lz-section-header-line"></div>' +
-          '<div class="lz-section-header-title">Build Gallery</div>' +
-          '<div class="lz-section-header-line"></div>' +
-        '</div>' +
+        sectionHeader('Build Gallery') +
         '<div class="lz-gallery">' + items + '</div>' +
       '</div>' +
       '<div class="lz-lightbox" id="lz-lightbox">' +
@@ -273,6 +271,53 @@
     });
   }
 
+  /* ── Parts List & Setup Notes ──────────────────────── */
+
+  // parts: [{ name, partNo, qty, note }] — everything but name is optional.
+  function renderPartsSection() {
+    var parts = B.parts;
+    if (!parts || !parts.length) return '';
+
+    var rows = '';
+    for (var i = 0; i < parts.length; i++) {
+      var p = parts[i];
+      rows += (
+        '<div class="lz-part">' +
+          '<div class="lz-part-head">' +
+            '<span class="lz-part-name">' + (p.qty > 1 ? esc(String(p.qty)) + ' × ' : '') + esc(p.name) + '</span>' +
+            (p.partNo ? '<span class="lz-part-no">' + esc(p.partNo) + '</span>' : '') +
+          '</div>' +
+          (p.note ? '<div class="lz-part-note">' + esc(p.note) + '</div>' : '') +
+        '</div>'
+      );
+    }
+
+    return (
+      '<div class="lz-section">' +
+        sectionHeader('Parts List') +
+        '<div class="lz-parts">' + rows + '</div>' +
+      '</div>'
+    );
+  }
+
+  // setupNotes: ["...", "..."] — what was changed and why.
+  function renderNotesSection() {
+    var notes = B.setupNotes;
+    if (!notes || !notes.length) return '';
+
+    var items = '';
+    for (var i = 0; i < notes.length; i++) {
+      items += '<li>' + esc(notes[i]) + '</li>';
+    }
+
+    return (
+      '<div class="lz-section">' +
+        sectionHeader('Setup Notes') +
+        '<ul class="lz-notes">' + items + '</ul>' +
+      '</div>'
+    );
+  }
+
   /* ── Videos ────────────────────────────────────────── */
 
   function renderVideoSection() {
@@ -292,11 +337,7 @@
 
     return (
       '<div class="lz-section">' +
-        '<div class="lz-section-header">' +
-          '<div class="lz-section-header-line"></div>' +
-          '<div class="lz-section-header-title">Videos</div>' +
-          '<div class="lz-section-header-line"></div>' +
-        '</div>' +
+        sectionHeader('Videos') +
         '<div class="lz-videos">' + cards + '</div>' +
       '</div>'
     );
@@ -313,6 +354,16 @@
   }
 
   /* ── Util ──────────────────────────────────────────── */
+
+  function sectionHeader(title) {
+    return (
+      '<div class="lz-section-header">' +
+        '<div class="lz-section-header-line"></div>' +
+        '<div class="lz-section-header-title">' + esc(title) + '</div>' +
+        '<div class="lz-section-header-line"></div>' +
+      '</div>'
+    );
+  }
 
   /* ── Click-to-load YouTube ────────────────────────────
      Nothing loads from YouTube until the visitor presses play

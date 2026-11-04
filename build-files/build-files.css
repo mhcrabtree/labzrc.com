@@ -726,9 +726,78 @@ a:hover { color: #ffd23f; }
   text-decoration: underline;
 }
 
+/* ── Parts List & Setup Notes ────────────────────────── */
+
+.lz-parts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.lz-part {
+  background: #1a1d24;
+  border-left: 3px solid var(--lz-accent);
+  padding: 12px 14px;
+}
+
+.lz-part-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.lz-part-name {
+  font-size: 15px;
+  color: var(--lz-card);
+}
+
+.lz-part-no {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--lz-accent);
+  white-space: nowrap;
+}
+
+.lz-part-note {
+  margin-top: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #b5b9c2;
+}
+
+.lz-notes {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.lz-notes li {
+  position: relative;
+  padding-left: 22px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #c9ccd3;
+}
+
+.lz-notes li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: .6em;
+  width: 7px;
+  height: 7px;
+  background: var(--lz-accent);
+  transform: rotate(45deg);
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 
 @media (max-width: 600px) {
+  .lz-parts { grid-template-columns: 1fr; }
   .lz-front-name { font-size: 48px; }
   .lz-page { padding: 24px 12px; gap: 20px; }
   .lz-boxart { gap: 20px; }
