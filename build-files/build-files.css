@@ -784,6 +784,20 @@ a:hover { color: #ffd23f; }
   color: #b5b9c2;
 }
 
+.lz-backstory {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.lz-backstory p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #c9ccd3;
+}
+
 .lz-notes {
   list-style: none;
   display: grid;

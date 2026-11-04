@@ -34,6 +34,7 @@
           renderFrontPanel() +
           renderBackPanel() +
         '</div>' +
+        renderBackstorySection() +
         renderGallerySection() +
         renderPartsSection() +
         renderNotesSection() +
@@ -307,6 +308,24 @@
       '<div class="lz-section">' +
         sectionHeader('Parts List') +
         '<div class="lz-parts">' + rows + '</div>' +
+      '</div>'
+    );
+  }
+
+  // backstory: ["paragraph", "paragraph"] — the builder's own history with the car.
+  function renderBackstorySection() {
+    var paras = B.backstory;
+    if (!paras || !paras.length) return '';
+
+    var body = '';
+    for (var i = 0; i < paras.length; i++) {
+      body += '<p>' + esc(paras[i]) + '</p>';
+    }
+
+    return (
+      '<div class="lz-section">' +
+        sectionHeader('Backstory') +
+        '<div class="lz-backstory">' + body + '</div>' +
       '</div>'
     );
   }
