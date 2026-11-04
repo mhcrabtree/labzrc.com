@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RC10T7 — LABZ RC Build File</title>
+  <title>80s Flashback RC10T7 — LABZ RC Build File</title>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="../build-files.css?v=20261104">
 </head>
@@ -12,20 +12,18 @@
 
 <script>
 var BUILD = {
-  // Identity — character name TBD
-  name: "RC10T7",
+  name: "80s Flashback RC10T7",
   subtitle: "Stadium Truck",
   classDesignation: "Stock Spec Class",
   chassis: "Associated RC10T7",
   raceClass: "13.5T Stock Spec",
   fileNumber: "02",
-  status: "in-progress",               // remove when the story and photos are in
 
   accentColor: "#E31837",
 
   functionLabel: "STADIUM ASSAULT",
-  tagline: "",
-  story: "",
+  tagline: "Fast isn't bought. It's practiced.",
+  story: "Born from the memory of a '90s RC10 stadium truck and an RC10GT from the 1/10 gas days, this T7 is the fun class. It doesn't flip, doesn't bounce over every rut, and doesn't care about the perfect line. It just wants to be driven hard. It runs what regular racers run: a tuned Trinity 13.5T, a Hobbywing stock spec, a Racers Edge pack. At AMain's Outback Raceways, the fastest club racers weren't on the latest and greatest. They just practiced. This truck isn't waiting on new parts. It's waiting on more laps.",
 
   stats: [
     { label: "Top Speed", value: 8 },
@@ -38,19 +36,69 @@ var BUILD = {
   specs: [
     { label: "ESC", value: "Hobbywing Xerun XR10 Stock Spec G2" },
     { label: "MOTOR", value: "Trinity 13.5T Slot Machine (tuned)" },
-    { label: "BATTERY", value: "5100 LiPo" },
-    { label: "SERVO", value: "Analog High-Torque (old skool)" },
-    { label: "TIRES", value: "AKA", wide: true }
+    { label: "BATTERY", value: "Racers Edge 130C 5100mAh LiPo" },
+    { label: "SERVO", value: "Airtronics 94359 (old skool)" },
+    { label: "RADIO", value: "Sanwa TX / 1up Racing Pro RX" },
+    { label: "TRANSPONDER", value: "AMBrc DP" },
+    { label: "WHEELS", value: "JConcepts Mono 12mm hex (white)" },
+    { label: "TIRES", value: "Turf: JConcepts Swaggers (F) / Fuzz Bite (R), pink. Dirt: AKA slicks", wide: true },
+    { label: "BODY", value: "JConcepts Finnisher RC10T 6.1, Tamiya white, black, Camel Yellow, Bright Red, Corsa Gray", wide: true }
   ],
 
   callouts: [],
 
   images: {
-    robotMode: null,
-    vehicleMode: null,
-    featureDiagram: null,
-    gallery: []
+    vehicleMode: "images/front-quarter.jpg",
+    featureDiagram: "images/body-side-601.jpg",
+    gallery: [
+      { src: "images/front-quarter.jpg", caption: "Turf setup — Swaggers up front, Fuzz Bites out back" },
+      { src: "images/body-side-601.jpg", caption: "Number 601, 80s stripes" },
+      { src: "images/electronics-top.jpg", caption: "Racers Edge pack, Hobbywing stock spec, AMBrc DP on the servo" },
+      { src: "images/servo-transponder.jpg", caption: "AMBrc DP transponder, on the car since the gas buggy days" },
+      { src: "images/motor-wiring.jpg", caption: "Tuned Trinity 13.5T Slot Machine and ProTek 30mm fan" },
+      { src: "images/drivetrain.jpg", caption: "Pinion, spur, and the B7 gear diff" },
+      { src: "images/front-bulkhead.jpg", caption: "Front bulkhead and kit sway bar" },
+      { src: "images/front-bumper-low.jpg", caption: "Front end, ground level" },
+      { src: "images/chassis-skin.jpg", caption: "Factory Team chassis protective sheet" }
+    ]
   },
+
+  parts: [
+    { name: "JConcepts Finnisher RC10T 6.1 Stadium Truck Body", partNo: "JCO0388",
+      note: "Painted for an 80s retro racer look. Decals are whatever looked cool." },
+    { name: "Tamiya PS-1 White, PS-5 Black, PS-19 Camel Yellow, PS-34 Bright Red, PS-32 Corsa Gray Polycarbonate Spray",
+      note: "Corsa Gray on the window trim." },
+    { name: "Team Associated RC10B7 Gear Differential Set", partNo: "ASC92491",
+      note: "Replaces the kit's ball diff." },
+    { name: "Team Associated RC10T7 Factory Team Pre-Cut Chassis Protective Sheet", partNo: "ASC71234" },
+    { name: "Trinity 13.5T Slot Machine Brushless Motor (tuned timing)",
+      note: "Worth the extra money to get it tuned. Insane motor." },
+    { name: "Hobbywing Xerun XR10 Stock Spec G2 ESC", partNo: "HWA30112402",
+      note: "From my 1/10 buggy. Proven, tunable, and pairs well with the Trinity. Runs blinky; out of blinky it feels like a mod truck on big tracks." },
+    { name: "1up Racing Pro RX 4-Channel Sanwa FH4 Antenna-Free 2.4GHz Receiver", partNo: "1UP10105",
+      note: "Works with my older Sanwa radio." },
+    { name: "Airtronics 94359 Servo",
+      note: "Off my old 1/8 gas buggy. Plenty of power, little play. No need for a new one yet." },
+    { name: "Team Associated Factory Team Aluminum Clamping Servo Horn, 23T", partNo: "ASC1369" },
+    { name: "AMBrc DP Personal Transponder",
+      note: "On my gas buggies since 2004." },
+    { name: "JConcepts Swaggers 2.2\" Stadium Truck Carpet Tires (Pink)", partNo: "JCO3162-010", qty: 2 },
+    { name: "JConcepts Fuzz Bite 2.2\" Stadium Truck Carpet Tires (Pink)", partNo: "JCO3191-010", qty: 2 },
+    { name: "JConcepts Mono 12mm Hex 1/10 Stadium Truck Wheels (White)", partNo: "JCO3354W" },
+    { name: "ProTek 30mm Motor Cooling Fan" },
+    { name: "AKA Slicks and AKA Wheels (dirt)",
+      note: "For dirt. The photos show the JConcepts turf setup." },
+    { name: "Racers Edge 130C 5100mAh LiPo Battery",
+      note: "Older pack. The truck already has more power than I can use on a fast lap." },
+    { name: "Team Associated RC10T7 Sway Bars (kit)",
+      note: "Kit bars, front and rear." }
+  ],
+
+  setupNotes: [
+    "Mainstream on purpose: Trinity, Hobbywing, Racers Edge. Proven parts regular racers run, not bleeding-edge electronics.",
+    "Shares parts with my RC10B7 buggy.",
+    "Runs turf and dirt. JConcepts pinks on white Monos for turf, AKA slicks on AKA wheels for dirt."
+  ],
 
   videos: []
 };
