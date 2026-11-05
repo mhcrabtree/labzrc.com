@@ -263,7 +263,14 @@
       items[i].addEventListener('click', (function (idx) {
         return function () {
           var g = gallery[idx];
+          // Show the cached gallery image right away, then swap in the full-size file when it loads.
           lbImg.src = g.src;
+          if (g.full) {
+            var hi = new Image();
+            hi.onload = function () { if (lbImg.getAttribute('data-idx') === String(idx)) lbImg.src = g.full; };
+            hi.src = g.full;
+          }
+          lbImg.setAttribute('data-idx', String(idx));
           lbImg.alt = g.caption || '';
           lbCap.textContent = g.caption || '';
           lbCap.style.display = g.caption ? '' : 'none';
@@ -275,6 +282,7 @@
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox || e.target === lbClose) {
         lightbox.classList.remove('open');
+        lbImg.removeAttribute('data-idx');
       }
     });
 
