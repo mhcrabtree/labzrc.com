@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gearing — Tuning Lab — LABZ RC</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="tuning.css?v=20261125">
+</head>
+<body>
+<div class="tl-header">
+  <a href="../index.html"><img src="../logo.png" alt="LABZ RC"></a>
+  <span class="title">Tuning Lab</span><span class="spacer"></span>
+  <a class="back" href="index.html">← Tuning Lab</a>
+</div>
+<div class="tl-page">
+  <div class="tl-eyebrow">LABZ RC · Tuning Lab</div>
+  <h1>Gearing</h1>
+  <p class="lead">Final drive ratio (FDR) for the ZX-7.5 from the manual's gear chart, plus a calculator for combinations the chart skips.</p>
+  <p class="meta">Last edited: November 25, 2026 · Dirt / clay, 17.5 stock class</p>
+<div class="callout"><p><strong>From Kyosho's manual.</strong> Rows marked (manual) come from the Lazer ZX-7.5 instruction manual, No. 34331.</p></div><div class="callout"><p><strong>Starting points, not gospel.</strong> These numbers come from general tuning guidance, not measured results from this garage. Change one thing at a time.</p></div>
+<h2>What the numbers mean</h2>
+<p>The ZX-7.5 uses <strong>48 pitch (48P)</strong> gears; "pitch" is the tooth size, and the spur and pinion are counted in teeth (T). Final drive ratio is <strong>spur teeth &divide; pinion teeth &times; 2.5</strong>, where 2.5 is the ratio built into the car after the pinion and spur. The values on the manual's chart all match this formula.</p>
+<div class="vs"><div class="up"><h4>Higher FDR (bigger spur or smaller pinion)</h4><ul><li>More acceleration and punch out of corners</li><li>Lower top speed</li><li>Cooler motor and ESC</li></ul></div><div class="down"><h4>Lower FDR (smaller spur or bigger pinion)</h4><ul><li>Higher top speed on long straights</li><li>Less punch; harder on the motor</li><li>Hotter motor and ESC</li></ul></div></div>
+<h2>Manual gear chart (spur teeth across, pinion teeth down)</h2>
+<p>Blank cells (&ndash;) are combinations the manual does not list as fitting. The kit spur is 78T.</p>
+<div class="tbl-wrap"><table><thead><tr><th>Pinion</th><th>82T</th><th>80T</th><th>78T</th><th>76T</th><th>72T</th><th>69T</th></tr></thead><tbody><tr><td>16T</td><td>12.81</td><td>12.50</td><td>12.19</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>17T</td><td>12.06</td><td>11.76</td><td>11.47</td><td>11.18</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>18T</td><td>11.39</td><td>11.11</td><td>10.83</td><td>10.56</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>19T</td><td>10.79</td><td>10.53</td><td>10.26</td><td>10.00</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>20T</td><td>10.25</td><td>10.00</td><td>9.75</td><td>9.50</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>21T</td><td>9.76</td><td>9.52</td><td>9.29</td><td>9.05</td><td>8.57</td><td>&ndash;</td></tr><tr><td>22T</td><td>9.32</td><td>9.09</td><td>8.86</td><td>8.64</td><td>8.18</td><td>&ndash;</td></tr><tr><td>23T</td><td>8.91</td><td>8.70</td><td>8.48</td><td>8.26</td><td>7.83</td><td>&ndash;</td></tr><tr><td>24T</td><td>8.54</td><td>8.33</td><td>8.13</td><td>7.92</td><td>7.50</td><td>7.19</td></tr><tr><td>25T</td><td>&ndash;</td><td>8.00</td><td>7.80</td><td>7.60</td><td>7.20</td><td>6.90</td></tr><tr><td>26T</td><td>&ndash;</td><td>7.69</td><td>7.50</td><td>7.31</td><td>6.92</td><td>6.63</td></tr><tr><td>27T</td><td>&ndash;</td><td>&ndash;</td><td>7.22</td><td>7.04</td><td>6.67</td><td>6.39</td></tr><tr><td>28T</td><td>&ndash;</td><td>&ndash;</td><td>6.96</td><td>6.79</td><td>6.43</td><td>6.16</td></tr><tr><td>29T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>6.55</td><td>6.21</td><td>5.95</td></tr><tr><td>30T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>6.33</td><td>6.00</td><td>5.75</td></tr><tr><td>31T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.81</td><td>5.56</td></tr><tr><td>32T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.63</td><td>5.39</td></tr><tr><td>33T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.45</td><td>5.23</td></tr><tr><td>34T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.29</td><td>5.07</td></tr><tr><td>35T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.14</td><td>4.93</td></tr><tr><td>36T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.00</td><td>4.79</td></tr></tbody></table></div>
+<p class="meta">Spur gears I found listed in the manual: LA427-76 (76T), LA427-78 (78T, kit), LA427-80 (80T). The chart also has 82T, 72T, and 69T columns, but I did not see part numbers for them. Pinions listed: 16T to 36T in 48P (page 6 and 44).</p>
+<h2>Calculator</h2>
+<form id="gc" onsubmit="return false" style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end">
+ <label>Spur (T)<br><input id="gs" type="number" value="78" min="40" max="100" style="width:90px;padding:6px"></label>
+ <label>Pinion (T)<br><input id="gp" type="number" value="21" min="10" max="50" style="width:90px;padding:6px"></label>
+ <div>FDR: <strong id="gf" style="color:var(--gold);font-size:1.4rem"></strong><br><span id="gn" class="meta"></span></div>
+</form>
+<script>
+(function(){var s=document.getElementById('gs'),p=document.getElementById('gp'),f=document.getElementById('gf'),n=document.getElementById('gn');
+function u(){var a=+s.value,b=+p.value;if(!a||!b){f.textContent='';return;}f.textContent=(a/b*2.5).toFixed(2);n.textContent='= '+a+' / '+b+' x 2.5';}
+s.oninput=p.oninput=u;u();})();
+</script>
+<h2>Picking a starting ratio</h2>
+<ul>
+ <li>The kit motor guidance in the manual is 15.5T or 13.5T for 4WD, so a 17.5 is a milder motor than Kyosho assumes. That points toward a <strong>higher FDR</strong> (more pinion-to-spur reduction) than a hot motor would use on the same track.</li>
+ <li>On a small, tight track with a 17.5, I would start near the middle of the chart and adjust by one tooth based on motor temperature and the end of the main straight. I have not tested these numbers, so treat any specific ratio as a guess.</li>
+ <li>After a run, check motor and ESC temperature. If either is too hot to hold your hand on for a few seconds, gear lower (higher FDR); if the car runs cool and feels slow on the straight, gear up.</li>
+ <li>Check mesh with a piece of paper between the gears (the manual shows this on page 29).</li>
+</ul>
+<div class="pager"><span><a href="wheelbase-chassis.html">&larr; Wheelbase, chassis, options</a></span><span><a href="tires.html">Tires &rarr;</a></span></div>
+  <div class="tl-footer">&copy; 2026 <a href="https://craz.com">Crabtree Labz</a> · <a href="https://craz.com/privacy.html">Privacy</a></div>
+</div>
+</body>
+</html>
