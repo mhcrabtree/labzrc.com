@@ -34,11 +34,11 @@
     if (!data) return;
     B.images = B.images || {};
     ['vehicleMode', 'robotMode', 'featureDiagram'].forEach(function (k) {
-      if (k in data) B.images[k] = data[k] ? data[k].src : null;
+      if (k in data) { B.images[k] = data[k] ? data[k].src : null; B.images[k + 'Alt'] = data[k] && data[k].alt || ''; }
     });
     if ('gallery' in data) {
       B.images.gallery = (data.gallery || []).map(function (g) {
-        return { src: g.src, full: g.full || g.src, caption: g.caption || '' };
+        return { src: g.src, full: g.full || g.src, caption: g.caption || '', alt: g.alt || '' };
       });
     }
   }
@@ -127,13 +127,13 @@
   function renderFrontPhoto() {
     var img = B.images && B.images.vehicleMode;
     var inner = img
-      ? '<img src="' + esc(img) + '" alt="' + esc(B.name) + '">'
+      ? '<img src="' + esc(img) + '" alt="' + esc((B.images && B.images.vehicleModeAlt) || B.name) + '">'
       : '<div class="lz-placeholder">Photos<br>Coming Soon</div>';
     return '<div class="lz-front-photo">' + inner + '</div>';
   }
 
   function renderFrontRobot(img) {
-    var inner = '<img src="' + esc(img) + '" alt="' + esc(B.name) + ' — Robot Mode">';
+    var inner = '<img src="' + esc(img) + '" alt="' + esc((B.images && B.images.robotModeAlt) || (B.name + ' — Robot Mode')) + '">';
     return (
       '<div class="lz-front-robot">' +
         inner +
@@ -145,7 +145,7 @@
   function renderFrontVehicle() {
     var img = B.images && B.images.vehicleMode;
     var inner = img
-      ? '<img src="' + esc(img) + '" alt="' + esc(B.name) + ' — Vehicle Mode">'
+      ? '<img src="' + esc(img) + '" alt="' + esc((B.images && B.images.vehicleModeAlt) || (B.name + ' — Vehicle Mode')) + '">'
       : '<div class="lz-placeholder" style="aspect-ratio:4/3">Vehicle Mode</div>';
     return (
       '<div class="lz-front-vehicle">' +
@@ -195,7 +195,7 @@
     return (
       '<div class="lz-back-diagram">' +
         '<div class="lz-back-diagram-frame">' +
-          '<img src="' + esc(B.images.featureDiagram) + '" alt="' + esc(B.name) + '">' +
+          '<img src="' + esc(B.images.featureDiagram) + '" alt="' + esc(B.images.featureDiagramAlt || B.name) + '">' +
           dots +
         '</div>' +
         (legend ? '<div class="lz-callout-legend">' + legend + '</div>' : '') +
@@ -259,7 +259,7 @@
       var g = gallery[i];
       items += (
         '<div class="lz-gallery-item" data-lz-gallery="' + i + '">' +
-          '<img src="' + esc(g.src) + '" alt="' + esc(g.caption || '') + '" loading="lazy">' +
+          '<img src="' + esc(g.src) + '" alt="' + esc(g.alt || g.caption || '') + '" loading="lazy">' +
           (g.caption ? '<div class="lz-gallery-caption">' + esc(g.caption) + '</div>' : '') +
         '</div>'
       );
