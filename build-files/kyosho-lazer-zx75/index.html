@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyosho Lazer ZX-7.5 — LABZ RC Build File</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="../build-files.css?v=20261126">
+</head>
+<body>
+<div id="lz-root"></div>
+
+<script>
+var BUILD = {
+  name: "Kyosho Lazer ZX-7.5",
+  subtitle: "4WD Off-Road Buggy",
+  classDesignation: "17.5T Stock",
+  chassis: "Kyosho Lazer ZX-7.5 (No. 34331)",
+  raceClass: "17.5T Stock 4WD Buggy",
+  fileNumber: "03",
+  status: "in-progress",
+
+  accentColor: "#c8102e",
+
+  functionLabel: "4WD CLUB RACER",
+  tagline: "A four-wheel drive to go with the two-wheel drive.",
+  story: "Built as the 4WD partner to my 2WD buggy for local club races, in the 17.5T stock class on small, tight, indoor high-traction clay. It starts from Kyosho's own base setup, then gets tuned one adjustment at a time with the LABZ RC Tuning Lab as the guide.",
+
+  backstory: [
+    "I picked up this Lazer ZX-7.5 on a Black Friday sale with a coupon code. Normally I would not buy a racer I can't get regular parts for, but I'm making an exception for this one.",
+    "I haven't raced a four-wheel drive buggy before, so this build is also how I'm learning to tune one. The Tuning Lab pages on this site are the notes I'm working from."
+  ],
+
+  stats: [],
+
+  specs: [
+    { label: "ESC", value: "Hobbywing Xerun XR10 Stock Spec G2 (same as the RC10T7)" },
+    { label: "MOTOR", value: "Hobbywing 17.5T (planned)" },
+    { label: "BATTERY", value: "2S shorty LiPo (the kit takes shorty packs only)" },
+    { label: "DIFFS", value: "Gear diffs: front #7000, center #200000, rear #5000 (kit)", wide: true },
+    { label: "SHOCKS", value: "Kyosho DC13 big bore, #400 oil front and rear (kit)", wide: true },
+    { label: "WHEELS", value: "Kit 2.2 in wheels (W5201WD front, W5202WC rear)" },
+    { label: "TIRES", value: "JConcepts Smoothie 2 slicks, silver compound (planned)", wide: true },
+    { label: "BODY", value: "Kit body (LAB07B)" }
+  ],
+
+  callouts: [],
+
+  images: {
+    vehicleMode: null,
+    featureDiagram: null,
+    gallery: []
+  },
+
+  parts: [
+    { name: "Kyosho Lazer ZX-7.5 1/10 4WD Electric Off-Road Buggy Kit", partNo: "KYO34331",
+      url: "https://www.amainhobbies.com/kyosho-lazer-zx7.5-1-10-4wd-electric-offroad-buggy-kit-kyo34331/p1827782",
+      note: "The kit has no tires, motor, ESC, servo, radio, or battery. Gear diffs front, center, and rear; 78T spur." },
+    { name: "Kyosho Silicone Shock Oil #400 (80cc)", partNo: "KYOSIL0400-8B",
+      url: "https://www.amainhobbies.com/kyosho-silicone-shock-oil-80cc-400cst-kyosil0400-8b/p453442?v=1589539",
+      note: "The oil the manual builds both the front and rear shocks with." },
+    { name: "Kyosho Silicone Shock Oil #350 (80cc)", partNo: "KYOSIL0350-8B",
+      url: "https://www.amainhobbies.com/kyosho-silicone-shock-oil-80cc-350cst-kyosil0350-8b/p453442?v=1621359",
+      note: "A step softer than the kit oil, for tuning." },
+    { name: "Kyosho Silicone Differential Oil #7000 (40cc)", partNo: "KYOSIL7000B",
+      url: "https://www.amainhobbies.com/kyosho-silicone-differential-oil-40cc-7000cst-kyosil7000b/p1282611?v=1281134",
+      note: "Kit front diff." },
+    { name: "Kyosho Silicone Differential Oil #5000 (40cc)", partNo: "KYOSIL5000B",
+      url: "https://www.amainhobbies.com/kyosho-silicone-differential-oil-40cc-5000cst-kyosil5000b/p1282611?v=1281131",
+      note: "Kit rear diff." },
+    { name: "Kyosho Silicone Differential Oil #200000 (40cc)", partNo: "KYOSIL200000",
+      url: "https://www.amainhobbies.com/kyosho-silicone-differential-oil-40cc-200000cst-kyosil200000/p453217?v=4431",
+      note: "Kit center diff." },
+    { name: "1UP Racing X-Gear 13mm Front and Rear Buggy Pro Pack Springs", partNo: "1UP10530",
+      url: "https://www.amainhobbies.com/1up-racing-xgear-13mm-front-rear-buggy-pro-pack-springs-6-firm-1up10530/p1583927",
+      note: "Aftermarket 13mm springs for the DC13 shocks. Check the rate and length against the kit springs (44 mm front, 61 mm rear) before ordering." },
+    { name: "JConcepts Smoothie 2 2.2\" 4WD Front Buggy Tires (Silver)", partNo: "JCO4019-06",
+      url: "https://www.amainhobbies.com/jconcepts-smoothie-2-2.2-4wd-front-buggy-tires-2-silver-jco4019-06/p1422336?v=1360623",
+      note: "Slicks for smooth, high-bite clay." },
+    { name: "JConcepts Smoothie 2 2.2\" Pre-Mounted Rear Buggy Tires (Silver)", partNo: "JCO4017-2691",
+      url: "https://www.amainhobbies.com/jconcepts-smoothie-2-2.2-premounted-rear-buggy-tires-yellow-2-silver-jco4017-2691/p1424374?v=1415121",
+      note: "Pre-mounted on wheels. Confirm the wheels fit the kit hubs, or use loose tires on the kit wheels." },
+    { name: "Kyosho Lazer ZX7.5 One-Way Slipper Clutch Set", partNo: "KYOLAW88",
+      url: "https://www.amainhobbies.com/kyosho-lazer-zx7.5-oneway-slipper-clutch-set-kyolaw88/p1867965",
+      note: "Optional. Replaces the center gear diff; adjusts off-power slip." },
+    { name: "Kyosho Steel 48P Pinion Gear", partNo: "KYOPNGS48xx",
+      url: "https://www.amainhobbies.com/kyosho-steel-48p-pinion-gear-3.17mm-bore-22t-kyopngs4822/p454412?v=1141390",
+      note: "Choose the tooth count from the gear chart. The listing shown is 22T." }
+  ],
+
+  setupNotes: [
+    "Kyosho's base setup is the starting point: #400 oil in all four shocks, front springs rated 3.6 and rear 2.15, stabilizer bars 1.2 mm front and 1.3 mm rear, and gear diff oil of #7000 front, #200000 center, and #5000 rear.",
+    "Kyosho's own grip scale for the front and rear diffs runs from #2000 (low grip) to #10000 (high grip). The kit's #7000 and #5000 sit on the high-grip side, which fits indoor clay.",
+    "The manual gives no camber, toe, caster, or ride height numbers, so those are started from the Tuning Lab and written down as they change.",
+    "One adjustment at a time, front and rear separately, with lap times logged after each change."
+  ],
+
+  links: [
+    { label: "Kyosho Lazer ZX-7.5 instruction manual (PDF)", url: "https://www.kyosho.com/jpn/support/instructionmanual/buggy/pdf/34331-LazerZX7_5_im.pdf", note: "No. 34331" },
+    { label: "Gear chart for this car", url: "gear-chart.html", note: "From manual page 36" },
+    { label: "Tuning Lab: springs", url: "../../tuning/springs.html" },
+    { label: "Tuning Lab: shock oil", url: "../../tuning/shock-oil.html" },
+    { label: "Tuning Lab: differentials", url: "../../tuning/diffs.html" },
+    { label: "Tuning Lab: shock position", url: "../../tuning/shock-position.html" },
+    { label: "Tuning Lab: links and alignment", url: "../../tuning/links-alignment.html" },
+    { label: "Tuning Lab: tires", url: "../../tuning/tires.html" }
+  ],
+
+  videos: []
+};
+</script>
+<script src="../build-files.js?v=20261126"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gear chart — Kyosho Lazer ZX-7.5 — LABZ RC Build File</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="../../tuning/tuning.css?v=20261126">
+</head>
+<body>
+<div class="tl-header">
+  <a href="../../index.html"><img src="../../logo.png" alt="LABZ RC"></a>
+  <span class="title">Build Files</span><span class="spacer"></span>
+  <a class="back" href="index.html">&larr; Kyosho Lazer ZX-7.5</a>
+</div>
+<div class="tl-page">
+  <div class="tl-eyebrow">LABZ RC &middot; Build File &middot; Kyosho Lazer ZX-7.5</div>
+  <h1>Gear chart</h1>
+  <p class="lead">Final drive ratio for the Lazer ZX-7.5, from page 36 of Kyosho's manual (No. 34331). Spur teeth run across and pinion teeth run down.</p>
+  <p class="meta">Last edited: November 26, 2026</p>
+
+  <div class="callout">
+    <p><strong>How it works.</strong> The car uses 48 pitch (48P) gears. Final drive ratio is <strong>spur teeth &divide; pinion teeth &times; 2.5</strong>, where 2.5 is the ratio built into this car. Every value on Kyosho's chart matches that formula. Blank cells (&ndash;) are combinations the manual does not list. The kit spur is 78T. The manual's spur parts are LA427-76 (76T), LA427-78 (78T, kit), and LA427-80 (80T); I did not see part numbers for the 82T, 72T, or 69T columns.</p>
+  </div>
+
+  <div class="tbl-wrap"><table><thead><tr><th>Pinion</th><th>82T</th><th>80T</th><th>78T</th><th>76T</th><th>72T</th><th>69T</th></tr></thead><tbody><tr><td>16T</td><td>12.81</td><td>12.50</td><td>12.19</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>17T</td><td>12.06</td><td>11.76</td><td>11.47</td><td>11.18</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>18T</td><td>11.39</td><td>11.11</td><td>10.83</td><td>10.56</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>19T</td><td>10.79</td><td>10.53</td><td>10.26</td><td>10.00</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>20T</td><td>10.25</td><td>10.00</td><td>9.75</td><td>9.50</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>21T</td><td>9.76</td><td>9.52</td><td>9.29</td><td>9.05</td><td>8.57</td><td>&ndash;</td></tr><tr><td>22T</td><td>9.32</td><td>9.09</td><td>8.86</td><td>8.64</td><td>8.18</td><td>&ndash;</td></tr><tr><td>23T</td><td>8.91</td><td>8.70</td><td>8.48</td><td>8.26</td><td>7.83</td><td>&ndash;</td></tr><tr><td>24T</td><td>8.54</td><td>8.33</td><td>8.13</td><td>7.92</td><td>7.50</td><td>7.19</td></tr><tr><td>25T</td><td>&ndash;</td><td>8.00</td><td>7.80</td><td>7.60</td><td>7.20</td><td>6.90</td></tr><tr><td>26T</td><td>&ndash;</td><td>7.69</td><td>7.50</td><td>7.31</td><td>6.92</td><td>6.63</td></tr><tr><td>27T</td><td>&ndash;</td><td>&ndash;</td><td>7.22</td><td>7.04</td><td>6.67</td><td>6.39</td></tr><tr><td>28T</td><td>&ndash;</td><td>&ndash;</td><td>6.96</td><td>6.79</td><td>6.43</td><td>6.16</td></tr><tr><td>29T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>6.55</td><td>6.21</td><td>5.95</td></tr><tr><td>30T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>6.33</td><td>6.00</td><td>5.75</td></tr><tr><td>31T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.81</td><td>5.56</td></tr><tr><td>32T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.63</td><td>5.39</td></tr><tr><td>33T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.45</td><td>5.23</td></tr><tr><td>34T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.29</td><td>5.07</td></tr><tr><td>35T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.14</td><td>4.93</td></tr><tr><td>36T</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>5.00</td><td>4.79</td></tr></tbody></table></div>
+
+  <h2>Calculator</h2>
+  <form id="gc" onsubmit="return false" style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end">
+    <label>Spur (T)<br><input id="gs" type="number" value="78" min="40" max="100" style="width:90px;padding:6px"></label>
+    <label>Pinion (T)<br><input id="gp" type="number" value="21" min="10" max="50" style="width:90px;padding:6px"></label>
+    <div>Final drive ratio: <strong id="gf" style="color:var(--gold);font-size:1.4rem"></strong><br><span id="gn" class="meta"></span></div>
+  </form>
+  <script>
+  (function(){var s=document.getElementById('gs'),p=document.getElementById('gp'),f=document.getElementById('gf'),n=document.getElementById('gn');
+  function u(){var a=+s.value,b=+p.value;if(!a||!b){f.textContent='';return;}f.textContent=(a/b*2.5).toFixed(2);n.textContent='= '+a+' / '+b+' x 2.5';}
+  s.oninput=p.oninput=u;u();})();
+  </script>
+
+  <h2>Choosing a starting ratio</h2>
+  <ul>
+    <li>Kyosho's motor suggestions for this car are 15.5T or 13.5T for 4WD, so a 17.5T is a milder motor than the manual assumes. That points toward a higher final drive ratio (a bigger spur or smaller pinion) than a hot motor would use on the same track.</li>
+    <li>On a small, tight track, start near the middle of the chart and move one tooth at a time, judging by motor temperature and the end of the main straight. These are not tested numbers; treat any specific ratio as a first guess.</li>
+    <li>If the motor or ESC is too hot to hold your hand on after a run, gear lower (higher ratio). If it runs cool and feels slow at the end of the straight, gear up (lower ratio).</li>
+    <li>Set the gear mesh with a sheet of paper between the gears, as the manual shows on page 29.</li>
+  </ul>
+  <p>For how gearing works in general, see <a href="../../tuning/gearing.html">Tuning Lab: gearing</a>.</p>
+
+  <div class="tl-footer">&copy; 2026 <a href="https://craz.com">Crabtree Labz</a> &middot; <a href="https://craz.com/privacy.html">Privacy</a></div>
+</div>
+</body>
+</html>

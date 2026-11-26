@@ -69,6 +69,7 @@
         renderGallerySection() +
         renderPartsSection() +
         renderNotesSection() +
+        renderLinksSection() +
         renderVideoSection() +
         renderFooter() +
       '</div>'
@@ -335,7 +336,9 @@
       rows += (
         '<div class="lz-part">' +
           '<div class="lz-part-head">' +
-            '<span class="lz-part-name">' + (p.qty > 1 ? esc(String(p.qty)) + ' × ' : '') + esc(p.name) + '</span>' +
+            '<span class="lz-part-name">' + (p.qty > 1 ? esc(String(p.qty)) + ' × ' : '') +
+              (p.url ? '<a class="lz-part-link" href="' + esc(p.url) + '" target="_blank" rel="noopener sponsored">' + esc(p.name) + '</a>' : esc(p.name)) +
+            '</span>' +
             (p.partNo ? '<span class="lz-part-no">' + esc(p.partNo) + '</span>' : '') +
           '</div>' +
           (p.note ? '<div class="lz-part-note">' + esc(p.note) + '</div>' : '') +
@@ -383,6 +386,25 @@
       '<div class="lz-section">' +
         sectionHeader('Setup Notes') +
         '<ul class="lz-notes">' + items + '</ul>' +
+      '</div>'
+    );
+  }
+
+  // links: [{ label, url, note }] — manuals, setup guides, and related pages.
+  function renderLinksSection() {
+    var links = B.links;
+    if (!links || !links.length) return '';
+    var items = '';
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i];
+      var external = /^https?:/.test(l.url);
+      items += '<li><a href="' + esc(l.url) + '"' + (external ? ' target="_blank" rel="noopener"' : '') + '>' + esc(l.label) + '</a>' +
+        (l.note ? ' <span class="lz-link-note">' + esc(l.note) + '</span>' : '') + '</li>';
+    }
+    return (
+      '<div class="lz-section">' +
+        sectionHeader('Resources') +
+        '<ul class="lz-notes lz-links">' + items + '</ul>' +
       '</div>'
     );
   }
