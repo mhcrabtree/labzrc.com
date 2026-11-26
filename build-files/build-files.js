@@ -4,6 +4,10 @@
   var B = window.BUILD;
   if (!B) return;
 
+  // AgentHubStudio publishes photos chosen on the phone as slots.json beside the page.
+  // Merge them over BUILD.images before rendering; without the file the page is unchanged.
+  applySlots();
+
   document.documentElement.style.setProperty('--lz-accent', B.accentColor || '#1E88E5');
 
   var root = document.getElementById('lz-root');
@@ -11,6 +15,33 @@
 
   root.innerHTML = renderHeader() + renderPage();
   bindGallery();
+
+  /* ── Photo slots (slots.json) ──────────────────────── */
+
+  function loadSlots() {
+    try {
+      var x = new XMLHttpRequest();
+      x.open('GET', 'slots.json', false);
+      x.send();
+      if (x.status !== 200) return null;
+      return JSON.parse(x.responseText).slots || null;
+    } catch (e) { return null; }
+  }
+
+  // Slot ids: vehicleMode, robotMode, featureDiagram (single images) and gallery (list).
+  function applySlots() {
+    var data = loadSlots();
+    if (!data) return;
+    B.images = B.images || {};
+    ['vehicleMode', 'robotMode', 'featureDiagram'].forEach(function (k) {
+      if (k in data) B.images[k] = data[k] ? data[k].src : null;
+    });
+    if ('gallery' in data) {
+      B.images.gallery = (data.gallery || []).map(function (g) {
+        return { src: g.src, full: g.full || g.src, caption: g.caption || '' };
+      });
+    }
+  }
 
   /* ── Renderers ─────────────────────────────────────── */
 
