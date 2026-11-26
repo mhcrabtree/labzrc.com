@@ -34,11 +34,11 @@
     if (!data) return;
     B.images = B.images || {};
     ['vehicleMode', 'robotMode', 'featureDiagram'].forEach(function (k) {
-      if (k in data) { B.images[k] = data[k] ? data[k].src : null; B.images[k + 'Alt'] = data[k] && data[k].alt || ''; }
+      if (k in data) { B.images[k] = data[k] ? data[k].src : null; B.images[k + 'Alt'] = data[k] && (data[k].alt || data[k].caption) || ''; }
     });
     if ('gallery' in data) {
       B.images.gallery = (data.gallery || []).map(function (g) {
-        return { src: g.src, full: g.full || g.src, caption: g.caption || '', alt: g.alt || '' };
+        return { src: g.src, full: g.full || g.src, caption: g.caption || '', alt: g.alt || g.caption || '' };
       });
     }
   }
