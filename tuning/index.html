@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tuning Lab — LABZ RC</title>
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="tuning.css?v=20261125">
+  <link rel="stylesheet" href="tuning.css?v=20261126">
 </head>
 <body>
 <div class="tl-header">
@@ -17,11 +17,11 @@
 <div class="tl-page">
   <div class="tl-eyebrow">LABZ RC · Tuning Lab</div>
   <h1>Tuning Lab: 1/10 Off-Road Buggies</h1>
-  <p class="lead">What each adjustment does, which way to turn it, and where to start. These pages cover 2WD and 4WD buggies in the 17.5 stock class on dirt and clay. Carpet comes later.</p>
-  <p class="meta">Last edited: November 25, 2026</p>
+  <p class="lead">What each adjustment does, which way to turn it, and where to start, with the front and rear of the car explained separately. These pages cover 2WD and 4WD buggies in the 17.5 stock class on dirt and clay. Carpet comes later.</p>
+  <p class="meta">Last edited: November 26, 2026</p>
 
   <div class="callout">
-    <p><strong>How to read these pages.</strong> Every number here is a starting point drawn from general tuning guidance and kit manuals, not a measured result from this garage. Change one thing at a time, write down what you changed, and trust your lap times over this site.</p>
+    <p><strong>How to read these pages.</strong> Every number here is a starting point drawn from general tuning guidance and kit manuals, not a measured result from this garage. Change one thing at a time, change the front and rear separately, and trust your lap times over this site.</p>
   </div>
 
   <h2>Start here: pick your car and track</h2>
@@ -41,82 +41,123 @@
   </form>
 
   <h2>Click the car: what happens when I change this?</h2>
-  <p>Tap a gold dot to see what happens when you increase or decrease that adjustment, then jump to the full page.</p>
-  <div class="diagram-wrap">
-    <svg viewBox="0 0 900 470" role="img" aria-label="Top and side view of a buggy with adjustment hotspots">
-      <g stroke="#3a3f4b" fill="#1a1d24" stroke-width="2">
-        <!-- Top view -->
-        <rect x="60" y="30" width="300" height="140" rx="14"/>
-        <rect x="20" y="20" width="44" height="60" rx="8" fill="#2a2e38"/><rect x="20" y="120" width="44" height="60" rx="8" fill="#2a2e38"/>
-        <rect x="356" y="20" width="44" height="60" rx="8" fill="#2a2e38"/><rect x="356" y="120" width="44" height="60" rx="8" fill="#2a2e38"/>
-        <line x1="64" y1="50" x2="10" y2="50"/><line x1="64" y1="150" x2="10" y2="150"/>
-        <line x1="356" y1="50" x2="410" y2="50"/><line x1="356" y1="150" x2="410" y2="150"/>
-        <!-- Side view -->
-        <rect x="110" y="300" width="330" height="26" rx="6"/>
-        <circle cx="120" cy="330" r="48" fill="#2a2e38"/><circle cx="440" cy="330" r="48" fill="#2a2e38"/>
-        <line x1="120" y1="300" x2="140" y2="250"/><line x1="440" y1="300" x2="420" y2="250"/>
-        <line x1="140" y1="250" x2="170" y2="300"/><line x1="420" y1="250" x2="390" y2="300"/>
-      </g>
-      <text x="215" y="22" fill="#8b8f98" font-family="Barlow Condensed" font-size="13" text-anchor="middle">TOP VIEW (FRONT ←)</text>
-      <text x="275" y="395" fill="#8b8f98" font-family="Barlow Condensed" font-size="13" text-anchor="middle">SIDE VIEW (FRONT ←)</text>
-      <!-- Right column key -->
-      <g font-family="Nunito" font-size="13" fill="#b9b4a6">
-        <text x="520" y="40">1  Shock top position</text><text x="520" y="64">2  Shock bottom position</text>
-        <text x="520" y="88">3  Springs</text><text x="520" y="112">4  Shock oil</text>
-        <text x="520" y="136">5  Pistons</text><text x="520" y="160">6  Differentials</text>
-        <text x="520" y="184">7  Anti-squat</text><text x="520" y="208">8  Front kickup</text>
-        <text x="520" y="232">9  Caster</text><text x="520" y="256">10  Camber</text>
-        <text x="520" y="280">11  Toe</text><text x="520" y="304">12  Turnbuckles / upper links</text>
-        <text x="520" y="328">13  Tires</text>
-      </g>
-      <!-- Hotspots (top view) -->
-      <g class="hot" data-adj="toe" tabindex="0" role="button" aria-label="Toe"><circle class="ring" cx="42" cy="100" r="13"/><circle class="dot" cx="42" cy="100" r="11"/><text x="42" y="104">11</text></g>
-      <g class="hot" data-adj="camber" tabindex="0" role="button" aria-label="Camber"><circle class="ring" cx="10" cy="50" r="13"/><circle class="dot" cx="10" cy="50" r="11"/><text x="10" y="54">10</text></g>
-      <g class="hot" data-adj="links" tabindex="0" role="button" aria-label="Turnbuckles"><circle class="ring" cx="410" cy="50" r="13"/><circle class="dot" cx="410" cy="50" r="11"/><text x="410" y="54">12</text></g>
-      <g class="hot" data-adj="diff" tabindex="0" role="button" aria-label="Differentials"><circle class="ring" cx="210" cy="100" r="13"/><circle class="dot" cx="210" cy="100" r="11"/><text x="210" y="104">6</text></g>
-      <g class="hot" data-adj="tires" tabindex="0" role="button" aria-label="Tires"><circle class="ring" cx="378" cy="100" r="13"/><circle class="dot" cx="378" cy="100" r="11"/><text x="378" y="104">13</text></g>
-      <g class="hot" data-adj="caster" tabindex="0" role="button" aria-label="Caster"><circle class="ring" cx="42" cy="160" r="13"/><circle class="dot" cx="42" cy="160" r="11"/><text x="42" y="164">9</text></g>
-      <!-- Hotspots (side view) -->
-      <g class="hot" data-adj="shockTop" tabindex="0" role="button" aria-label="Shock top"><circle class="ring" cx="150" cy="240" r="13"/><circle class="dot" cx="150" cy="240" r="11"/><text x="150" y="244">1</text></g>
-      <g class="hot" data-adj="shockBottom" tabindex="0" role="button" aria-label="Shock bottom"><circle class="ring" cx="172" cy="292" r="13"/><circle class="dot" cx="172" cy="292" r="11"/><text x="172" y="296">2</text></g>
-      <g class="hot" data-adj="springs" tabindex="0" role="button" aria-label="Springs"><circle class="ring" cx="236" cy="262" r="13"/><circle class="dot" cx="236" cy="262" r="11"/><text x="236" y="266">3</text></g>
-      <g class="hot" data-adj="oil" tabindex="0" role="button" aria-label="Shock oil"><circle class="ring" cx="276" cy="262" r="13"/><circle class="dot" cx="276" cy="262" r="11"/><text x="276" y="266">4</text></g>
-      <g class="hot" data-adj="pistons" tabindex="0" role="button" aria-label="Pistons"><circle class="ring" cx="316" cy="262" r="13"/><circle class="dot" cx="316" cy="262" r="11"/><text x="316" y="266">5</text></g>
-      <g class="hot" data-adj="antisquat" tabindex="0" role="button" aria-label="Anti-squat"><circle class="ring" cx="396" cy="338" r="13"/><circle class="dot" cx="396" cy="338" r="11"/><text x="396" y="342">7</text></g>
-      <g class="hot" data-adj="kickup" tabindex="0" role="button" aria-label="Front kickup"><circle class="ring" cx="126" cy="338" r="13"/><circle class="dot" cx="126" cy="338" r="11"/><text x="126" y="342">8</text></g>
-    </svg>
-  </div>
-  <p class="meta">Prefer a list? <button class="chip" data-open="shockTop">Shock top</button> <button class="chip" data-open="springs">Springs</button> <button class="chip" data-open="oil">Oil</button> <button class="chip" data-open="diff">Diffs</button> <button class="chip" data-open="antisquat">Anti-squat</button> <button class="chip" data-open="caster">Caster</button></p>
+  <p>The drawing is to scale for a 1/10 4WD buggy. Tap a dot to see what happens when you turn that adjustment up or down, at the <span class="key f">front</span> or the <span class="key r">rear</span> of the car. Tabs in the pop-up let you compare both ends side by side.</p>
+  <div class="legend"><span class="key f">Front end</span><span class="key r">Rear end</span><span class="key c">Center (4WD)</span></div>
+  <div class="diagram-wrap"><svg viewBox="70 0 740 690" role="img" aria-label="Scale top and side view of a 1/10 4WD buggy with adjustment hotspots">
+<defs><pattern id="gnd" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#2c313b" stroke-width="2"/></pattern></defs>
+<g class="drawing">
+<text class="cap" x="430" y="20">TOP VIEW</text>
+<text class="end" x="120" y="194">FRONT</text><text class="end" x="745" y="194">REAR</text>
+<rect class="body-line" x="166" y="116" width="524" height="148" rx="44"/>
+<path class="chassis" d="M176,160 Q172,190 176,220 L262,226 L300,255 L540,255 L580,232 L640,226 Q646,190 640,154 L580,148 L540,125 L300,125 L262,154 Z"/>
+<rect class="tire" x="163.5" y="34.5" width="133" height="73" rx="16"/>
+<rect class="tire" x="524.5" y="29.5" width="133" height="83" rx="16"/>
+<line class="tread" x1="171.5" y1="71" x2="288.5" y2="71"/>
+<line class="tread" x1="532.5" y1="71" x2="649.5" y2="71"/>
+<rect class="tire" x="163.5" y="272.5" width="133" height="73" rx="16"/>
+<rect class="tire" x="524.5" y="267.5" width="133" height="83" rx="16"/>
+<line class="tread" x1="171.5" y1="309" x2="288.5" y2="309"/>
+<line class="tread" x1="532.5" y1="309" x2="649.5" y2="309"/>
+<line class="arm" x1="200" y1="152" x2="230" y2="108"/>
+<line class="arm" x1="260" y1="152" x2="230" y2="108"/>
+<line class="arm" x1="200" y1="228" x2="230" y2="272"/>
+<line class="arm" x1="260" y1="228" x2="230" y2="272"/>
+<line class="shaft2" x1="230" y1="108" x2="230" y2="272"/>
+<line class="arm" x1="561" y1="152" x2="591" y2="113"/>
+<line class="arm" x1="621" y1="152" x2="591" y2="113"/>
+<line class="arm" x1="561" y1="228" x2="591" y2="267"/>
+<line class="arm" x1="621" y1="228" x2="591" y2="267"/>
+<line class="shaft2" x1="591" y1="113" x2="591" y2="267"/>
+<line class="shaft2" x1="230" y1="190" x2="591" y2="190"/>
+<circle class="part" cx="230" cy="190" r="12"/>
+<circle class="part" cx="385" cy="190" r="14"/>
+<circle class="part" cx="591" cy="190" r="12"/>
+<rect class="part" x="320" y="135" width="125" height="52" rx="4"/>
+<rect class="part" x="300" y="200" width="70" height="44" rx="4"/>
+<rect class="part" x="420" y="205" width="80" height="44" rx="8"/>
+<rect class="part" x="190" y="170" width="44" height="22" rx="3"/>
+<line class="tower" x1="264" y1="135" x2="264" y2="245"/>
+<line class="tower" x1="557" y1="140" x2="557" y2="240"/>
+<rect class="part" x="668" y="130" width="52" height="120" rx="4"/>
+</g>
+<g class="drawing">
+<text class="cap" x="430" y="408">SIDE VIEW</text>
+<text class="end" x="104" y="580">FRONT</text><text class="end" x="742" y="580">REAR</text>
+<rect x="110" y="640" width="640" height="12" fill="url(#gnd)"/><line class="ground" x1="110" y1="640" x2="750" y2="640"/>
+<circle class="tire ghost" cx="230" cy="573.5" r="66.5"/><circle class="tread" cx="230" cy="573.5" r="49" fill="none"/><circle class="part" cx="230" cy="573.5" r="14"/>
+<circle class="tire ghost" cx="591" cy="573.5" r="66.5"/><circle class="tread" cx="591" cy="573.5" r="49" fill="none"/><circle class="part" cx="591" cy="573.5" r="14"/>
+<path class="body-line" d="M176,606 C170,572 186,556 222,548 L318,512 C352,486 396,476 440,478 L560,490 C600,494 626,500 650,506 L650,606"/>
+<polygon class="part" points="652,478 706,470 706,520 652,522"/>
+<line class="tower" x1="630" y1="526" x2="656" y2="490"/>
+<rect class="chassis" x="176" y="609" width="474" height="6" rx="2"/>
+<rect class="part" x="320" y="582" width="125" height="27"/>
+<rect class="part" x="446" y="565" width="70" height="44" rx="8"/>
+<circle class="part" cx="385" cy="590" r="20"/>
+<line class="tower" x1="270" y1="609" x2="264" y2="523"/>
+<line class="tower" x1="551" y1="609" x2="557" y2="523"/>
+<line class="arm" x1="196" y1="609" x2="230" y2="573.5"/><line class="arm" x1="264" y1="609" x2="230" y2="573.5"/>
+<line class="arm" x1="557" y1="609" x2="591" y2="573.5"/><line class="arm" x1="625" y1="609" x2="591" y2="573.5"/>
+<line class="arm" x1="282" y1="542" x2="234" y2="552"/>
+<line class="arm" x1="539" y1="542" x2="587" y2="552"/>
+<line class="shaft" x1="264" y1="523" x2="240" y2="584"/><line class="body" x1="261.1" y1="530.3" x2="242.4" y2="577.9"/><polyline class="spring" points="264.3,538.6 251.5,538.4 261.0,547.0 248.2,546.8 257.7,555.4 244.9,555.2 254.4,563.8 241.6,563.6 251.1,572.2 238.3,572.0"/>
+<line class="shaft" x1="557" y1="523" x2="581" y2="584"/><line class="body" x1="559.9" y1="530.3" x2="578.6" y2="577.9"/><polyline class="spring" points="567.9,534.2 558.3,542.8 571.2,542.6 561.7,551.2 574.5,551.0 565.0,559.6 577.8,559.4 568.3,568.0 581.1,567.8 571.6,576.4"/>
+<line class="leader" x1="298" y1="528" x2="252" y2="528"/>
+<line class="leader" x1="298" y1="556" x2="252" y2="556"/>
+<line class="leader" x1="298" y1="584" x2="252" y2="584"/>
+<line class="leader" x1="523" y1="528" x2="569" y2="528"/>
+<line class="leader" x1="523" y1="556" x2="569" y2="556"/>
+<line class="leader" x1="523" y1="584" x2="569" y2="584"/>
+</g>
+<g class="hot f" data-adj="diff" data-end="front" tabindex="0" role="button" aria-label="Differentials, front end"><circle class="ring" cx="230" cy="190" r="15"/><circle class="dot" cx="230" cy="190" r="11"/><text x="230" y="194">6</text></g>
+<g class="hot c" data-adj="diff" data-end="center" tabindex="0" role="button" aria-label="Differentials, center end"><circle class="ring" cx="385" cy="190" r="15"/><circle class="dot" cx="385" cy="190" r="11"/><text x="385" y="194">6</text></g>
+<g class="hot r" data-adj="diff" data-end="rear" tabindex="0" role="button" aria-label="Differentials, rear end"><circle class="ring" cx="591" cy="190" r="15"/><circle class="dot" cx="591" cy="190" r="11"/><text x="591" y="194">6</text></g>
+<g class="hot f" data-adj="camber" data-end="front" tabindex="0" role="button" aria-label="Camber, front end"><circle class="ring" cx="196" cy="71" r="15"/><circle class="dot" cx="196" cy="71" r="11"/><text x="196" y="75">10</text></g>
+<g class="hot f" data-adj="toe" data-end="front" tabindex="0" role="button" aria-label="Toe, front end"><circle class="ring" cx="264" cy="71" r="15"/><circle class="dot" cx="264" cy="71" r="11"/><text x="264" y="75">11</text></g>
+<g class="hot r" data-adj="camber" data-end="rear" tabindex="0" role="button" aria-label="Camber, rear end"><circle class="ring" cx="557" cy="71" r="15"/><circle class="dot" cx="557" cy="71" r="11"/><text x="557" y="75">10</text></g>
+<g class="hot r" data-adj="toe" data-end="rear" tabindex="0" role="button" aria-label="Toe, rear end"><circle class="ring" cx="625" cy="71" r="15"/><circle class="dot" cx="625" cy="71" r="11"/><text x="625" y="75">11</text></g>
+<g class="hot f" data-adj="caster" data-end="front" tabindex="0" role="button" aria-label="Caster, front end"><circle class="ring" cx="196" cy="309" r="15"/><circle class="dot" cx="196" cy="309" r="11"/><text x="196" y="313">9</text></g>
+<g class="hot f" data-adj="tires" data-end="front" tabindex="0" role="button" aria-label="Tires, front end"><circle class="ring" cx="264" cy="309" r="15"/><circle class="dot" cx="264" cy="309" r="11"/><text x="264" y="313">14</text></g>
+<g class="hot r" data-adj="tires" data-end="rear" tabindex="0" role="button" aria-label="Tires, rear end"><circle class="ring" cx="591" cy="309" r="15"/><circle class="dot" cx="591" cy="309" r="11"/><text x="591" y="313">14</text></g>
+<g class="hot f" data-adj="links" data-end="front" tabindex="0" role="button" aria-label="Turnbuckles and upper links, front end"><circle class="ring" cx="264" cy="142" r="15"/><circle class="dot" cx="264" cy="142" r="11"/><text x="264" y="146">12</text></g>
+<g class="hot r" data-adj="links" data-end="rear" tabindex="0" role="button" aria-label="Turnbuckles and upper links, rear end"><circle class="ring" cx="557" cy="142" r="15"/><circle class="dot" cx="557" cy="142" r="11"/><text x="557" y="146">12</text></g>
+<g class="hot f" data-adj="sway" data-end="front" tabindex="0" role="button" aria-label="Sway bars, front end"><circle class="ring" cx="264" cy="238" r="15"/><circle class="dot" cx="264" cy="238" r="11"/><text x="264" y="242">13</text></g>
+<g class="hot r" data-adj="sway" data-end="rear" tabindex="0" role="button" aria-label="Sway bars, rear end"><circle class="ring" cx="557" cy="238" r="15"/><circle class="dot" cx="557" cy="238" r="11"/><text x="557" y="242">13</text></g>
+<g class="hot f" data-adj="shockTop" data-end="front" tabindex="0" role="button" aria-label="Shock top position (tower), front end"><circle class="ring" cx="264" cy="523" r="15"/><circle class="dot" cx="264" cy="523" r="11"/><text x="264" y="527">1</text></g>
+<g class="hot r" data-adj="shockTop" data-end="rear" tabindex="0" role="button" aria-label="Shock top position (tower), rear end"><circle class="ring" cx="557" cy="523" r="15"/><circle class="dot" cx="557" cy="523" r="11"/><text x="557" y="527">1</text></g>
+<g class="hot f" data-adj="shockBottom" data-end="front" tabindex="0" role="button" aria-label="Shock bottom position (arm), front end"><circle class="ring" cx="240" cy="584" r="15"/><circle class="dot" cx="240" cy="584" r="11"/><text x="240" y="588">2</text></g>
+<g class="hot r" data-adj="shockBottom" data-end="rear" tabindex="0" role="button" aria-label="Shock bottom position (arm), rear end"><circle class="ring" cx="581" cy="584" r="15"/><circle class="dot" cx="581" cy="584" r="11"/><text x="581" y="588">2</text></g>
+<g class="hot f" data-adj="springs" data-end="front" tabindex="0" role="button" aria-label="Springs, front end"><circle class="ring" cx="298" cy="528" r="15"/><circle class="dot" cx="298" cy="528" r="11"/><text x="298" y="532">3</text></g>
+<g class="hot f" data-adj="oil" data-end="front" tabindex="0" role="button" aria-label="Shock oil, front end"><circle class="ring" cx="298" cy="556" r="15"/><circle class="dot" cx="298" cy="556" r="11"/><text x="298" y="560">4</text></g>
+<g class="hot f" data-adj="pistons" data-end="front" tabindex="0" role="button" aria-label="Pistons and hole sizes, front end"><circle class="ring" cx="298" cy="584" r="15"/><circle class="dot" cx="298" cy="584" r="11"/><text x="298" y="588">5</text></g>
+<g class="hot r" data-adj="springs" data-end="rear" tabindex="0" role="button" aria-label="Springs, rear end"><circle class="ring" cx="523" cy="528" r="15"/><circle class="dot" cx="523" cy="528" r="11"/><text x="523" y="532">3</text></g>
+<g class="hot r" data-adj="oil" data-end="rear" tabindex="0" role="button" aria-label="Shock oil, rear end"><circle class="ring" cx="523" cy="556" r="15"/><circle class="dot" cx="523" cy="556" r="11"/><text x="523" y="560">4</text></g>
+<g class="hot r" data-adj="pistons" data-end="rear" tabindex="0" role="button" aria-label="Pistons and hole sizes, rear end"><circle class="ring" cx="523" cy="584" r="15"/><circle class="dot" cx="523" cy="584" r="11"/><text x="523" y="588">5</text></g>
+<g class="hot r" data-adj="antisquat" data-end="rear" tabindex="0" role="button" aria-label="Front kick-up and rear anti-squat, rear end"><circle class="ring" cx="625" cy="609" r="15"/><circle class="dot" cx="625" cy="609" r="11"/><text x="625" y="613">7</text></g>
+<g class="hot f" data-adj="antisquat" data-end="front" tabindex="0" role="button" aria-label="Front kick-up and rear anti-squat, front end"><circle class="ring" cx="196" cy="609" r="15"/><circle class="dot" cx="196" cy="609" r="11"/><text x="196" y="613">7</text></g>
+<g class="hot f" data-adj="rideHeight" data-end="front" tabindex="0" role="button" aria-label="Ride height and droop, front end"><circle class="ring" cx="305" cy="627" r="15"/><circle class="dot" cx="305" cy="627" r="11"/><text x="305" y="631">8</text></g>
+<g class="hot r" data-adj="rideHeight" data-end="rear" tabindex="0" role="button" aria-label="Ride height and droop, rear end"><circle class="ring" cx="516" cy="627" r="15"/><circle class="dot" cx="516" cy="627" r="11"/><text x="516" y="631">8</text></g>
+</svg></div>
+  <p class="meta">Prefer a list? Pick an adjustment:</p>
+  <div class="chip-row"><button class="chip" data-open="shockTop">1  Shock top position (tower)</button><button class="chip" data-open="shockBottom">2  Shock bottom position (arm)</button><button class="chip" data-open="springs">3  Springs</button><button class="chip" data-open="oil">4  Shock oil</button><button class="chip" data-open="pistons">5  Pistons and hole sizes</button><button class="chip" data-open="diff">6  Differentials</button><button class="chip" data-open="antisquat">7  Front kick-up and rear anti-squat</button><button class="chip" data-open="rideHeight">8  Ride height and droop</button><button class="chip" data-open="caster">9  Caster</button><button class="chip" data-open="camber">10  Camber</button><button class="chip" data-open="toe">11  Toe</button><button class="chip" data-open="links">12  Turnbuckles and upper links</button><button class="chip" data-open="sway">13  Sway bars</button><button class="chip" data-open="tires">14  Tires</button></div>
 
   <h2>The reference pages</h2>
-  <div class="card-grid">
-    <a class="card" href="zx-7-5-base-setup.html"><div class="t">Kyosho Lazer ZX-7.5 base setup</div><div class="d">Kyosho's kit setup from the manual, plus a start for high-bite clay.</div></a>
-    <a class="card" href="springs.html"><div class="t">Springs</div><div class="d">Color ladder, soft vs firm, and front vs rear effects.</div></a>
-    <a class="card" href="shock-oil.html"><div class="t">Shock oil</div><div class="d">What stiffer and softer oil does, plus Kyosho #350 and #400 vs Associated weights.</div></a>
-    <a class="card" href="pistons.html"><div class="t">Pistons and hole sizes</div><div class="d">1.6, 1.7, 1.8 holes and hole counts, front and rear.</div></a>
-    <a class="card" href="diffs.html"><div class="t">Differentials</div><div class="d">Ball vs gear diffs, plus front, center, and rear oil for dirt.</div></a>
-    <a class="card" href="shock-position.html"><div class="t">Shock position</div><div class="d">Tops in or out, bottoms in or out, front and rear.</div></a>
-    <a class="card" href="anti-squat.html"><div class="t">Anti-squat and kickup</div><div class="d">What the pills and inserts really adjust.</div></a>
-    <a class="card" href="links-alignment.html"><div class="t">Links and alignment</div><div class="d">Turnbuckles, caster, camber, and toe.</div></a>
-    <a class="card" href="wheelbase-chassis.html"><div class="t">Wheelbase, chassis, options</div><div class="d">Longer or shorter, wider or narrower, and what the carbon parts and slipper do.</div></a>
-    <a class="card" href="gearing.html"><div class="t">Gearing</div><div class="d">Spur and pinion chart from the manual, with a final drive calculator.</div></a>
-    <a class="card" href="parts-list.html"><div class="t">ZX-7.5 parts list</div><div class="d">Oils, springs, and tires used in these pages, linked at AMain Hobbies.</div></a>
-    <a class="card" href="tires.html"><div class="t">Tires</div><div class="d">Slicks vs treaded, compounds, and the brands people run.</div></a>
-  </div>
+  <div class="card-grid"><a class="card" href="springs.html"><div class="t">Springs</div><div class="d">Soft vs firm, front vs rear, plus 13mm aftermarket springs.</div></a><a class="card" href="shock-oil.html"><div class="t">Shock oil</div><div class="d">What thicker and thinner oil does at each end, and Kyosho vs Associated weights.</div></a><a class="card" href="pistons.html"><div class="t">Pistons</div><div class="d">Hole sizes and counts, front and rear.</div></a><a class="card" href="shock-position.html"><div class="t">Shock position</div><div class="d">Tops in or out and bottoms in or out, at each end.</div></a><a class="card" href="ride-height.html"><div class="t">Ride height and droop</div><div class="d">Ride height and droop, front and rear.</div></a><a class="card" href="sway-bars.html"><div class="t">Sway bars</div><div class="d">Thicker and thinner bars, front and rear.</div></a><a class="card" href="diffs.html"><div class="t">Differentials</div><div class="d">Ball vs gear, and front, center, and rear oil for dirt.</div></a><a class="card" href="anti-squat.html"><div class="t">Anti-squat and kick-up</div><div class="d">Rear anti-squat and front kick-up.</div></a><a class="card" href="links-alignment.html"><div class="t">Links and alignment</div><div class="d">Caster, camber, toe, and turnbuckles, front and rear.</div></a><a class="card" href="wheelbase-chassis.html"><div class="t">Wheelbase and chassis</div><div class="d">Wheelbase, track width, weight balance, and stiffening.</div></a><a class="card" href="gearing.html"><div class="t">Gearing</div><div class="d">Final drive ratio and how to pick a pinion.</div></a><a class="card" href="tires.html"><div class="t">Tires</div><div class="d">Slicks vs treaded, compounds, and who makes them.</div></a><a class="card" href="parts-list.html"><div class="t">Tuning parts at AMain</div><div class="d">Oils, springs, and tires linked at AMain Hobbies.</div></a></div>
+
+  <h2>Putting it to use</h2>
+  <p>The tuning pages are general. A build file records one specific car: its parts, its base setup, and what changed. See the <a href="../build-files/index.html">build files</a>.</p>
 
   <h2>What else is worth tracking</h2>
   <ul>
-    <li><strong>Ride height and droop.</strong> Set these first; they change every other adjustment.</li>
-    <li><strong>Sway bars.</strong> Stiffer front bar sharpens turn-in; stiffer rear bar adds rear stability on smooth tracks.</li>
-    <li><strong>Weight balance and battery position.</strong> Moving the pack changes front/rear balance more than most small tweaks.</li>
+    <li><strong>A setup log.</strong> Record track, temperature, tires, and lap times with every change.</li>
     <li><strong>ESC and motor settings.</strong> Punch, drag brake, and timing change how the chassis loads as much as any shock change.</li>
-    <li><strong>A setup log.</strong> Record track, temperature, tire, and lap times with every change.</li>
+    <li><strong>Battery position.</strong> It moves weight front to rear faster than almost any other change.</li>
   </ul>
 
   <div class="tl-footer">&copy; 2026 <a href="https://craz.com">Crabtree Labz</a> · <a href="https://craz.com/privacy.html">Privacy</a></div>
 </div>
 
 <div class="modal-bg" id="modal-bg"><div class="modal" id="modal-box" role="dialog" aria-modal="true"></div></div>
-<script src="tuning.js?v=20261125"></script>
+<script src="adjustments.js?v=20261126"></script>
+<script src="tuning.js?v=20261126"></script>
 </body>
 </html>
